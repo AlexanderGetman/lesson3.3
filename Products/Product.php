@@ -10,14 +10,17 @@ abstract class Product
     {
         $this->name = $name;
     }
+
     public function setPrice($price)
     {
         $this->price = $price;
     }
+
     public function getName()
     {
         return $this->name;
     }
+
     public function getPrice()
     {
         return $this->price;
@@ -31,7 +34,7 @@ abstract class Product
 
     public function orderDescription()
     {
-        echo '<b>наименование товара:</b> '.$this->name.', <b>на сумму:</b> '.$this->getPrice().' рублей';
-        $this->orderDescription();
+        echo '<b>наименование товара:</b> ' . $this->name . ', <b>на сумму:</b> ' . $this->getPrice() . ' рублей';
     }
+
 }
