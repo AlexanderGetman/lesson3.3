@@ -1,6 +1,6 @@
 <?php
 
-class Order
+class Order extends Basket
 {
     private $order;
 
