@@ -1,9 +1,10 @@
 <?php
 
+
 class Basket implements \ArrayAccess
 
 {
-    public $inBasket = [];
+    protected $inBasket = [];
     public function offsetSet($index, $product) //Исключает товар с нулевой ценой
     {
         try {
