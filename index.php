@@ -6,7 +6,8 @@ session_start();
 spl_autoload_register ('myAutoLoad');
 function myAutoLoad ($className)
 {
-    $fileName = $_SERVER['DOCUMENT_ROOT'] . '\Products' . DIRECTORY_SEPARATOR . $className . '.php';
+    $className = str_replace('/', DIRECTORY_SEPARATOR, $className);
+    $fileName =  'Products' . DIRECTORY_SEPARATOR . $className . '.php';
     require_once $fileName;
 }
 
@@ -28,4 +29,3 @@ var_dump ($basket->getTotalPrice());
 
 $order = new Order($basket);
 $order->getOrderInfo();
-
