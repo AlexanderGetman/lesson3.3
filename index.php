@@ -1,7 +1,7 @@
 <?php
+
 header("Content-Type: text/html; charset=utf-8");
 session_start();
-
 
 spl_autoload_register ('myAutoLoad');
 function myAutoLoad ($className)
@@ -20,16 +20,17 @@ function myAutoLoad ($className)
 $basket = new Basket();
 
 $pagani= new Car('Pagani', 250000);
-$basket[] = $pagani;
+$basket->addToBasket($pagani);
 
 $koenigsegg = new Car('Koenigsegg', 1750000);
-$basket[] = $koenigsegg;
+$basket->addToBasket($koenigsegg);
 
 $defaultPen = new BallPen('Ручка', 150);
-$basket[] = $defaultPen;
+$basket->addToBasket($defaultPen);
 
 $sony4k = new Tv ('Sony 4K TV Set', 0);
-$basket[] = $sony4k;
+$basket->addToBasket($sony4k);
 
 $order = new Order($basket);
 $order->getOrderInfo();
+
