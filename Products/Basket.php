@@ -1,10 +1,15 @@
 <?php
 
-
 class Basket implements \ArrayAccess
 
 {
     protected $inBasket = [];
+
+    public function addToBasket($product)
+    {
+        $this->inBasket[] = $product;
+    }
+
     public function offsetSet($index, $product) //Исключает товар с нулевой ценой
     {
         try {
@@ -26,7 +31,6 @@ class Basket implements \ArrayAccess
 
     public function offsetExists($index)
     {
-
         return isset($this->inBasket[$index]);
     }
 
